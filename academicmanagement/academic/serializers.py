@@ -1,32 +1,27 @@
 from rest_framework import serializers
-from .models import Student, Faculty, Department, Mentorship, AcademicCalendar
+from .models import Program, Semester, Course, Subject, Lab
 
-
-class StudentSerializer(serializers.ModelSerializer):
+class ProgramSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = Program
         fields = '__all__'
 
-
-class FacultySerializer(serializers.ModelSerializer):
+class SemesterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Faculty
+        model = Semester
         fields = '__all__'
 
-
-class DepartmentSerializer(serializers.ModelSerializer):
+class CourseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Department
+        model = Course
         fields = '__all__'
 
-
-class MentorshipSerializer(serializers.ModelSerializer):
+class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Mentorship
+        model = Subject
         fields = '__all__'
 
-
-class AcademicCalendarSerializer(serializers.ModelSerializer):
+class LabSerializer(serializers.ModelSerializer):
     class Meta:
-        model = AcademicCalendar
+        model = Lab
         fields = '__all__'

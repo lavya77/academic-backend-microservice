@@ -1,17 +1,14 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import (
-    StudentViewSet, FacultyViewSet, DepartmentViewSet,
-    MentorshipViewSet, AcademicCalendarViewSet
-)
+from .views import *
 
 router = DefaultRouter()
-router.register(r'students', StudentViewSet)
-router.register(r'faculty', FacultyViewSet)
-router.register(r'departments', DepartmentViewSet)
-router.register(r'mentorships', MentorshipViewSet)
-router.register(r'academic-calendar', AcademicCalendarViewSet)
+router.register(r'programs', ProgramViewSet)
+router.register(r'semesters', SemesterViewSet)
+router.register(r'courses', CourseViewSet)
+router.register(r'subjects', SubjectViewSet)
+router.register(r'labs', LabViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]

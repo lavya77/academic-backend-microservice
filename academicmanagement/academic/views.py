@@ -1,35 +1,23 @@
-from django.shortcuts import render
-
-# Create your views here.
 from rest_framework import viewsets
-from .models import Student, Faculty, Department, Mentorship, AcademicCalendar
-from .serializers import (
-    StudentSerializer, FacultySerializer, DepartmentSerializer,
-    MentorshipSerializer, AcademicCalendarSerializer
-)
+from .models import Program, Semester, Course, Subject, Lab
+from .serializers import *
 
+class ProgramViewSet(viewsets.ModelViewSet):
+    queryset = Program.objects.all()
+    serializer_class = ProgramSerializer
 
-class StudentViewSet(viewsets.ModelViewSet):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+class SemesterViewSet(viewsets.ModelViewSet):
+    queryset = Semester.objects.all()
+    serializer_class = SemesterSerializer
 
+class CourseViewSet(viewsets.ModelViewSet):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
 
-class FacultyViewSet(viewsets.ModelViewSet):
-    queryset = Faculty.objects.all()
-    serializer_class = FacultySerializer
+class SubjectViewSet(viewsets.ModelViewSet):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
 
-
-class DepartmentViewSet(viewsets.ModelViewSet):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
-
-
-class MentorshipViewSet(viewsets.ModelViewSet):
-    queryset = Mentorship.objects.all()
-    serializer_class = MentorshipSerializer
-
-
-class AcademicCalendarViewSet(viewsets.ModelViewSet):
-    queryset = AcademicCalendar.objects.all()
-    serializer_class = AcademicCalendarSerializer
-
+class LabViewSet(viewsets.ModelViewSet):
+    queryset = Lab.objects.all()
+    serializer_class = LabSerializer

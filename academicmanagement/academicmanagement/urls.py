@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/academic/', include('academic.urls')),  # Prefix for academic microservice
+    path('', include('academic.urls')),
 ]
